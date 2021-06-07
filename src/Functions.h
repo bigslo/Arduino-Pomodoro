@@ -17,7 +17,7 @@
 #define LONG_BREAK_MINUTE 15
 #define ALL_SECOND 0
 
-//DEVICES INITIALIZATIONS
+//DEVICE INITIALIZATIONS
 U8X8_SSD1306_128X32_UNIVISION_SW_I2C u8x8(SCL_PIN, SDA_PIN, U8X8_PIN_NONE);
 auto timer = timer_create_default();
 
@@ -161,20 +161,20 @@ void initTimer()
   timerPaused = false;  //set timer paused flag : false
   if (STATE == TOSTUDY)
   {
-    second = 5; //ALL_SECOND;
-    minute = 0; //STUDY_MINUTE;
+    second = ALL_SECOND;
+    minute = STUDY_MINUTE;
   }
 
   if (STATE == TOBREAK)
   {
-    second = 2; //ALL_SECOND;
-    minute = 0; //BREAK_MINUTE;
+    second = ALL_SECOND;
+    minute = BREAK_MINUTE;
   }
 
   if (STATE == TOLONGBREAK)
   {
-    second = 3; //ALL_SECOND;
-    minute = 0; //LONG_BREAK_MINUTE;
+    second = ALL_SECOND;
+    minute = LONG_BREAK_MINUTE;
   }
 
   isMinChanged = isSecChanged = isStateChanged = true; //Raise flags to update display
